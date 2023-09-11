@@ -159,12 +159,16 @@ const InputForm = () => {
         setDamroadimg(files);
     };
 
+    function sendResponse(){
+        alert("submit");
+    }
+
 
     return (
         <div className=" md:mt-0 mt-12 border-t-0 h-screen">
             <h1 className="text-2xl mt-12 mb-2 font-bold text-center">Give data for the impacts of any event</h1>
             <div className="flex">
-                <form className="justify-center space-y-4 mt-12 p-10 mb-12 max-w-4xl pb-12 mx-auto bg-gray-100 border border-gray-400 py-6 rounded-lg ">
+                <form className="justify-center space-y-4 mt-12 p-10 mb-12 max-w-4xl pb-12 mx-auto bg-gray-100 border border-gray-400 py-6 rounded-lg " onSubmit={sendResponse}>
 
                     <div className="flex space-x-8">
                         <div className='w-1/3 grid row-span-2'>
@@ -174,6 +178,7 @@ const InputForm = () => {
                                 value={selectedDate}
                                 onChange={(e) => setSelectedDate(e.target.value)}
                                 type="date"
+                                required
                             />
                         </div>
 
@@ -195,14 +200,14 @@ const InputForm = () => {
 
                         <div className="w-1/3">
                             <label className="">Affected Population:  </label>
-                            <input className="border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus:outline-none focus:border-teal-500" type="number" name="AP" id="AP" onChange={(e) => { setAffectedPopulation(e.target.value) }} />
+                            <input className="border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus:outline-none focus:border-teal-500" type="number" name="AP" id="AP" onChange={(e) => { setAffectedPopulation(e.target.value) }} required/>
                         </div>
 
                     </div>
 
                     {(eventcategory === 'Monsoon' || eventcategory === 'Premonsoon') && (<div className="">
                         <label className="">Rainfall(mm):  </label>
-                        <input className="border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus:outline-none focus:border-teal-500" type="number" name="rainfall" id="rainfall" onChange={(e) => { setRainfall(e.target.value) }} />
+                        <input className="border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus:outline-none focus:border-teal-500" type="number" name="rainfall" id="rainfall" onChange={(e) => { setRainfall(e.target.value) }} required/>
                     </div>)}
 
                     {eventcategory === 'Earthquake' && (
@@ -216,6 +221,7 @@ const InputForm = () => {
                                         name="latitude"
                                         id="latitude"
                                         onChange={(e) => { setLatitude((e.target.value)) }}
+                                        required
                                     />
                                 </div>
                                 <div className='w-1/4'>
@@ -226,6 +232,7 @@ const InputForm = () => {
                                         name="longitude"
                                         id="longitude"
                                         onChange={(e) => { setLongitude(e.target.value) }}
+                                        required
                                     />
                                 </div>
                                 <div className='w-1/4'>
@@ -236,6 +243,7 @@ const InputForm = () => {
                                         name="longitude"
                                         id="longitude"
                                         onChange={(e) => { setEpicenter(e.target.value) }}
+                                        required
                                     />
                                 </div>
                                 <div className='w-1/4'>
@@ -246,6 +254,7 @@ const InputForm = () => {
                                         name="longitude"
                                         id="longitude"
                                         onChange={(e) => { setEventDate(e.target.value) }}
+                                        required
                                     />
                                 </div>
                             </div>
@@ -258,6 +267,7 @@ const InputForm = () => {
                                         name="magnitude"
                                         id="magnitude"
                                         onChange={(e) => { setMagnitude(e.target.value) }}
+                                        required
                                     />
                                 </div>
                                 <div className="w-1/3">
@@ -268,6 +278,7 @@ const InputForm = () => {
                                         name="depth"
                                         id="depth"
                                         onChange={(e) => { setDepth(e.target.value) }}
+                                        required
                                     />
                                 </div>
                                 <div className="w-1/3">
@@ -278,6 +289,7 @@ const InputForm = () => {
                                         name="time"
                                         id="time"
                                         onChange={(e) => { setTime(e.target.value) }}
+                                        required
                                     />
                                 </div>
                             </div>
@@ -294,6 +306,7 @@ const InputForm = () => {
                                 className="border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500"
                                 value={province}
                                 onChange={(e) => setProvince(e.target.value)}
+                                required
                             >
                                 <option value="">Select Province</option>
                                 {provinceData.map((provinceName, index) => (
@@ -329,6 +342,7 @@ const InputForm = () => {
                                 className="border border-gray-400 py-2 px-4 w-full block rounded focus:outline-none focus:border-teal-500"
                                 value={selectedTehsil}
                                 onChange={(e) => setSelectedTehsil(e.target.value)}
+                                required
                             >
                                 <option value="">Select Tehsil</option>
                                 {selectedDistrict && (
@@ -352,23 +366,23 @@ const InputForm = () => {
                         <div className="flex space-x-8">
                             <div className="w-1/3">
                                 <label className=''>Male:      </label>
-                                <input className=" border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus:outline-none focus:border-teal-500" type="number" name="MD" id="MD" onChange={(e) => { setMd(e.target.value) }} />
+                                <input className=" border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus:outline-none focus:border-teal-500" type="number" name="MD" id="MD" onChange={(e) => { setMd(e.target.value) }} required/>
                             </div>
 
                             <div className="w-1/3">
                                 <label className=' '>Female:     </label>
-                                <input className=" border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus outline-none focus:border-teal-500 " type="number" name="FD" id="FD" onChange={(e) => { setFd(e.target.value) }} />
+                                <input className=" border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus outline-none focus:border-teal-500 " type="number" name="FD" id="FD" onChange={(e) => { setFd(e.target.value) }} required/>
                             </div>
 
                             <div className="w-1/3">
                                 <label className="">Children:  </label>
-                                <input className="border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus:outline-none focus:border-teal-500" type="number" name="CD" id="CD" onChange={(e) => { setCd(e.target.value) }} />
+                                <input className="border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus:outline-none focus:border-teal-500" type="number" name="CD" id="CD" onChange={(e) => { setCd(e.target.value) }} required/>
                             </div>
 
                         </div>
                         <div className="">
                             <label>Give Remarks:</label>
-                            <input className="border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus:outline-none focus:border-teal-500" type="text" name="remarks" id="remarks" onChange={(e) => { setDeathRemarks(e.target.value) }} />
+                            <input className="border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus:outline-none focus:border-teal-500" type="text" name="remarks" id="remarks" onChange={(e) => { setDeathRemarks(e.target.value) }} required/>
                         </div>
 
                     </div>
@@ -378,23 +392,23 @@ const InputForm = () => {
                         <div className="flex space-x-8">
                             <div className="w-1/3">
                                 <label className=''>Male:      </label>
-                                <input className=" border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus:outline-none focus:border-teal-500" type="number" name="MI" id="MI" onChange={(e) => { setMi(e.target.value) }} />
+                                <input className=" border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus:outline-none focus:border-teal-500" type="number" name="MI" id="MI" onChange={(e) => { setMi(e.target.value) }} required/>
                             </div>
 
                             <div className="w-1/3">
                                 <label className=' '>Female:     </label>
-                                <input className=" border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus outline-none focus:border-teal-500 " type="number" name="FI" id="FI" onChange={(e) => { setFi(e.target.value) }} />
+                                <input className=" border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus outline-none focus:border-teal-500 " type="number" name="FI" id="FI" onChange={(e) => { setFi(e.target.value) }} required/>
                             </div>
 
                             <div className="w-1/3">
                                 <label className="">Children:  </label>
-                                <input className="border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus:outline-none focus:border-teal-500" type="number" name="CI" id="CI" onChange={(e) => { setCi(e.target.value) }} />
+                                <input className="border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus:outline-none focus:border-teal-500" type="number" name="CI" id="CI" onChange={(e) => { setCi(e.target.value) }} required/>
                             </div>
 
                         </div>
                         <div className="">
                             <label>Give Remarks:</label>
-                            <input className="border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus:outline-none focus:border-teal-500" type="text" name="remarks" id="remarks" onChange={(e) => { setInjuriesRemarks(e.target.value) }} />
+                            <input className="border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus:outline-none focus:border-teal-500" type="text" name="remarks" id="remarks" onChange={(e) => { setInjuriesRemarks(e.target.value) }} required/>
                         </div>
 
                     </div>
@@ -405,17 +419,17 @@ const InputForm = () => {
                         <div className="flex space-x-8 ">
                             <div className="w-1/3 ">
                                 <label className=''>Partial:      </label>
-                                <input className=" border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus:outline-none focus:border-teal-500" type="number" name="PH" id="PH" onChange={(e) => { setPh(e.target.value) }} />
+                                <input className=" border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus:outline-none focus:border-teal-500" type="number" name="PH" id="PH" onChange={(e) => { setPh(e.target.value) }} required/>
                             </div>
 
                             <div className="w-1/3">
                                 <label className=' '>Full:     </label>
-                                <input className=" border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus outline-none focus:border-teal-500 " type="number" name="FH" id="FH" onChange={(e) => { setFh(e.target.value) }} />
+                                <input className=" border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus outline-none focus:border-teal-500 " type="number" name="FH" id="FH" onChange={(e) => { setFh(e.target.value) }} required/>
                             </div>
 
                             <div className=" w-1/3">
                                 <label>Number of livestock:</label>
-                                <input className="border border-gray-400 w-full block py-2 mt-0 px-4 mr-4 ml-0 rounded focus:outline-none focus:border-teal-500" type="number" name="livestock" id="livestock" onChange={(e) => { setLivestock(e.target.value) }} />
+                                <input className="border border-gray-400 w-full block py-2 mt-0 px-4 mr-4 ml-0 rounded focus:outline-none focus:border-teal-500" type="number" name="livestock" id="livestock" onChange={(e) => { setLivestock(e.target.value) }} required/>
                             </div>
 
                         </div>
@@ -423,12 +437,12 @@ const InputForm = () => {
                         <div className="flex mt-4 space-x-8 ">
                             <div className="w-1/2 ">
                                 <label className=''>No of schools damaged:      </label>
-                                <input className=" border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus:outline-none focus:border-teal-500" type="number" name="schoolsDamaged" id="schoolsDamaged" onChange={(e) => { setDmageschools(e.target.value) }} />
+                                <input className=" border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus:outline-none focus:border-teal-500" type="number" name="schoolsDamaged" id="schoolsDamaged" onChange={(e) => { setDmageschools(e.target.value) }} required/>
                             </div>
 
                             <div className="w-1/2">
                                 <label className=' '>Other buildings damaged:     </label>
-                                <input className=" border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus outline-none focus:border-teal-500 " type="number" name="otherbuildings" id="otherbuildings" onChange={(e) => { setDamagedbuilding(e.target.value) }} />
+                                <input className=" border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus outline-none focus:border-teal-500 " type="number" name="otherbuildings" id="otherbuildings" onChange={(e) => { setDamagedbuilding(e.target.value) }} required/>
                             </div>
 
                         </div>
@@ -545,12 +559,13 @@ const InputForm = () => {
                                 multiple
                                 onChange={handleBrigImg}
                                 className="border border-gray-400 w-full block py-2 mt-0 px-4 mr-4 ml-0 rounded focus:outline-none focus:border-teal-500"
+                                required
                             />
                         </div>
                         <div>
                             <div className="">
                                 <label className=' '>Images Detail</label>
-                                <textarea className=" border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus outline-none focus:border-teal-500 " rows="3" name="camppopulation" id="camppopulation" onChange={(e) => { setCampspop(e.target.value) }} />
+                                <textarea className=" border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus outline-none focus:border-teal-500 " rows="3" name="camppopulation" id="camppopulation" onChange={(e) => { setCampspop(e.target.value) }} required/>
                             </div>
                         </div>
                     </div>
@@ -560,25 +575,25 @@ const InputForm = () => {
                         <div className="flex space-x-8">
                             <div className="w-1/2 ">
                                 <label className=''>Cause of Incident</label>
-                                <input className=" border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus:outline-none focus:border-teal-500" type="text" name="campsno" id="campsno" onChange={(e) => { setCampsno(e.target.value) }} />
+                                <input className=" border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus:outline-none focus:border-teal-500" type="text" name="campsno" id="campsno" onChange={(e) => { setCampsno(e.target.value) }} required/>
                             </div>
 
                             <div className="w-1/2">
                                 <label className=' '>Source</label>
-                                <input className=" border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus outline-none focus:border-teal-500 " type="text" name="camppopulation" id="camppopulation" onChange={(e) => { setCampspop(e.target.value) }} />
+                                <input className=" border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus outline-none focus:border-teal-500 " type="text" name="camppopulation" id="camppopulation" onChange={(e) => { setCampspop(e.target.value) }} required/>
                             </div>
 
                         </div>
                         <div>
                             <div className="">
                                 <label className=' '>Detail of Incident</label>
-                                <textarea className=" border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus outline-none focus:border-teal-500 " rows="3" name="camppopulation" id="camppopulation" onChange={(e) => { setCampspop(e.target.value) }} />
+                                <textarea className=" border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus outline-none focus:border-teal-500 " rows="3" name="camppopulation" id="camppopulation" onChange={(e) => { setCampspop(e.target.value) }} required/>
                             </div>
                         </div>
                         <div>
                             <div className="">
                                 <label className=' '>Response</label>
-                                <input className=" border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus outline-none focus:border-teal-500 " type="text" name="camppopulation" id="camppopulation" onChange={(e) => { setCampspop(e.target.value) }} />
+                                <input className=" border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus outline-none focus:border-teal-500 " type="text" name="camppopulation" id="camppopulation" onChange={(e) => { setCampspop(e.target.value) }} required/>
                             </div>
                         </div>
                     </div>)}
@@ -588,12 +603,12 @@ const InputForm = () => {
                         <div className="flex space-x-8">
                             <div className="w-1/2 ">
                                 <label className=''>Number of camps</label>
-                                <input className=" border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus:outline-none focus:border-teal-500" type="number" name="campsno" id="campsno" onChange={(e) => { setCampsno(e.target.value) }} />
+                                <input className=" border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus:outline-none focus:border-teal-500" type="number" name="campsno" id="campsno" onChange={(e) => { setCampsno(e.target.value) }} required/>
                             </div>
 
                             <div className="w-1/2">
                                 <label className=' '>Camp population</label>
-                                <input className=" border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus outline-none focus:border-teal-500 " type="text" name="camppopulation" id="camppopulation" onChange={(e) => { setCampspop(e.target.value) }} />
+                                <input className=" border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus outline-none focus:border-teal-500 " type="text" name="camppopulation" id="camppopulation" onChange={(e) => { setCampspop(e.target.value) }} required/>
                             </div>
 
                         </div>
@@ -603,12 +618,12 @@ const InputForm = () => {
                         <div className="flex space-x-8  ">
                             <div className="w-1/2">
                                 <label className=' '>Employment of Boats</label>
-                                <input className=" border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus outline-none focus:border-teal-500 " type="text" name="boatsemploy" id="boatsemploy" onChange={(e) => { setBoatsemploy(e.target.value) }} />
+                                <input className=" border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus outline-none focus:border-teal-500 " type="text" name="boatsemploy" id="boatsemploy" onChange={(e) => { setBoatsemploy(e.target.value) }} required/>
                             </div>
 
                             <div className="w-1/2">
                                 <label className=' '>Employment of Aviation Assets</label>
-                                <input className=" border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus outline-none focus:border-teal-500 " type="text" name="aviationemploy" id="aviationemploy" onChange={(e) => { setAviationEmploy(e.target.value) }} />
+                                <input className=" border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus outline-none focus:border-teal-500 " type="text" name="aviationemploy" id="aviationemploy" onChange={(e) => { setAviationEmploy(e.target.value) }} required/>
                             </div>
                         </div>
                     </div>)}
@@ -809,17 +824,17 @@ const InputForm = () => {
 
                                 <div className="w-1/4">
                                     <label className=' '>Food Packs</label>
-                                    <input className=" border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus outline-none focus:border-teal-500 " type="number" name="TYB" id="TYB" onChange={(e) => { setPfoodpacks(e.target.value) }} />
+                                    <input className=" border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus outline-none focus:border-teal-500 " type="number" name="TYB" id="TYB" onChange={(e) => { setPfoodpacks(e.target.value) }} required/>
                                 </div>
 
                                 <div className="w-1/4">
                                     <label className=' '>Cooked Food</label>
-                                    <input className=" border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus outline-none focus:border-teal-500 " type="number" name="TYB" id="TYB" onChange={(e) => { setPcookedfood(e.target.value) }} />
+                                    <input className=" border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus outline-none focus:border-teal-500 " type="number" name="TYB" id="TYB" onChange={(e) => { setPcookedfood(e.target.value) }} required/>
                                 </div>
 
                                 <div className="w-1/4">
                                     <label className=' '>Gas Cylinders</label>
-                                    <input className=" border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus outline-none focus:border-teal-500 " type="number" name="TYB" id="TYB" onChange={(e) => { setPgascylinder(e.target.value) }} />
+                                    <input className=" border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus outline-none focus:border-teal-500 " type="number" name="TYB" id="TYB" onChange={(e) => { setPgascylinder(e.target.value) }} required/>
                                 </div>
                             </div>
 
@@ -827,56 +842,56 @@ const InputForm = () => {
 
                                 <div className="w-1/4">
                                     <label className=' '>Kitchen Set</label>
-                                    <input className=" border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus outline-none focus:border-teal-500 " type="number" name="TYB" id="TYB" onChange={(e) => { setPkitchenkit(e.target.value) }} />
+                                    <input className=" border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus outline-none focus:border-teal-500 " type="number" name="TYB" id="TYB" onChange={(e) => { setPkitchenkit(e.target.value) }} required/>
                                 </div>
 
                                 <div className="w-1/4">
                                     <label className=' '>First aid kits</label>
-                                    <input className=" border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus outline-none focus:border-teal-500 " type="number" name="TYB" id="TYB" onChange={(e) => { setPfirstaidkit(e.target.value) }} />
+                                    <input className=" border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus outline-none focus:border-teal-500 " type="number" name="TYB" id="TYB" onChange={(e) => { setPfirstaidkit(e.target.value) }} required/>
                                 </div>
 
                                 <div className="w-1/4">
                                     <label className=' '>Hygiene Kit</label>
-                                    <input className=" border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus outline-none focus:border-teal-500 " type="number" name="TYB" id="TYB" onChange={(e) => { setPhygienekit(e.target.value) }} />
+                                    <input className=" border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus outline-none focus:border-teal-500 " type="number" name="TYB" id="TYB" onChange={(e) => { setPhygienekit(e.target.value) }} required/>
                                 </div>
 
                                 <div className="w-1/4">
                                     <label className=' '>Boats</label>
-                                    <input className=" border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus outline-none focus:border-teal-500 " type="number" name="TYB" id="TYB" onChange={(e) => { setPboat(e.target.value) }} />
+                                    <input className=" border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus outline-none focus:border-teal-500 " type="number" name="TYB" id="TYB" onChange={(e) => { setPboat(e.target.value) }} required/>
                                 </div>
                             </div>
 
                             <div className="flex space-x-8">
                                 <div className="w-1/3">
                                     <label className=' '>De-watering Pumps</label>
-                                    <input className=" border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus outline-none focus:border-teal-500 " type="number" name="TYB" id="TYB" onChange={(e) => { setPdewateringpump(e.target.value) }} />
+                                    <input className=" border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus outline-none focus:border-teal-500 " type="number" name="TYB" id="TYB" onChange={(e) => { setPdewateringpump(e.target.value) }}  required/>
                                 </div>
 
                                 <div className="w-1/3">
                                     <label className=' '>Beds/Chapai</label>
-                                    <input className=" border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus outline-none focus:border-teal-500 " type="number" name="TYB" id="TYB" onChange={(e) => { setPbed(e.target.value) }} />
+                                    <input className=" border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus outline-none focus:border-teal-500 " type="number" name="TYB" id="TYB" onChange={(e) => { setPbed(e.target.value) }} required/>
                                 </div>
 
                                 <div className="w-1/3">
                                     <label className=' '>Life Saving Jackets</label>
-                                    <input className=" border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus outline-none focus:border-teal-500 " type="number" name="TYB" id="TYB" onChange={(e) => { setPlifesavingjacket(e.target.value) }} />
+                                    <input className=" border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus outline-none focus:border-teal-500 " type="number" name="TYB" id="TYB" onChange={(e) => { setPlifesavingjacket(e.target.value) }} required/>
                                 </div>
                             </div>
 
                             <div className="flex space-x-8">
                                 <div className="w-1/3">
                                     <label className=' '>Blankets/ Sleeping Bags</label>
-                                    <input className=" border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus outline-none focus:border-teal-500 " type="number" name="TYB" id="TYB" onChange={(e) => { setPblanket(e.target.value) }} />
+                                    <input className=" border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus outline-none focus:border-teal-500 " type="number" name="TYB" id="TYB" onChange={(e) => { setPblanket(e.target.value) }} required/>
                                 </div>
 
                                 <div className="w-1/3">
                                     <label className=' '>Net Mosquito/ animal</label>
-                                    <input className=" border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus outline-none focus:border-teal-500 " type="number" name="TYB" id="TYB" onChange={(e) => { setPnetmosquito(e.target.value) }} />
+                                    <input className=" border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus outline-none focus:border-teal-500 " type="number" name="TYB" id="TYB" onChange={(e) => { setPnetmosquito(e.target.value) }} required/>
                                 </div>
 
                                 <div className="w-1/3">
                                     <label className=' '>Water Tanks/filter</label>
-                                    <input className=" border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus outline-none focus:border-teal-500 " type="number" name="TYB" id="TYB" onChange={(e) => { setPwatertank(e.target.value) }} />
+                                    <input className=" border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus outline-none focus:border-teal-500 " type="number" name="TYB" id="TYB" onChange={(e) => { setPwatertank(e.target.value) }} required/>
                                 </div>
                             </div>
                         </div>)}
@@ -886,23 +901,23 @@ const InputForm = () => {
                         <div className="flex space-x-8 ">
                             <div className="w-1/3 ">
                                 <label className=''>Relief items:</label>
-                                <input className=" border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus:outline-none focus:border-teal-500" type="text" name="reliefitems" id="reliefitems" onChange={(e) => { setReliefItems(e.target.value) }} />
+                                <input className=" border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus:outline-none focus:border-teal-500" type="text" name="reliefitems" id="reliefitems" onChange={(e) => { setReliefItems(e.target.value) }} required/>
                             </div>
 
                             <div className="w-1/3">
                                 <label className=' '>Quantity:</label>
-                                <input className=" border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus outline-none focus:border-teal-500 " type="number" name="quantity" id="quantity" onChange={(e) => { setQuantity(e.target.value) }} />
+                                <input className=" border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus outline-none focus:border-teal-500 " type="number" name="quantity" id="quantity" onChange={(e) => { setQuantity(e.target.value) }} required/>
                             </div>
 
                             <div className="w-1/3 ">
                                 <label className=''>Organization:</label>
-                                <input className=" border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus:outline-none focus:border-teal-500" type="text" name="organization" id="organization" onChange={(e) => { setOrganization(e.target.value) }} />
+                                <input className=" border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus:outline-none focus:border-teal-500" type="text" name="organization" id="organization" onChange={(e) => { setOrganization(e.target.value) }} required />
                             </div>
                         </div>
                     </div>
 
                     <div className="flex justify-center items-center">
-                        <button type="button" className="bg-gray-300 mt-10 hover:bg-gray-400 font-bold py-2 px-4 rounded " >Submit</button>
+                        <button type="submit" className="bg-gray-300 mt-10 hover:bg-gray-400 font-bold py-2 px-4 rounded " >Submit</button>
                     </div>
 
                 </form>
