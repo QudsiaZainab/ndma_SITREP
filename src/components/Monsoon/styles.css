@@ -1,0 +1,24 @@
+.without-pdf {
+  padding: 20px!important;
+}
+
+.without-pdf h6, .without-pdf h2, .without-pdf .date, .without-pdf #subject{
+  font-size: 1.3rem!important;
+}
+
+.without-pdf p, .without-pdf div, .without-pdf th, .without-pdf td{
+  font-size: 1rem!important;
+}
+
+.without-pdf img{
+  width: 100px!important;
+  height: 100px!important;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+.without-pdf .start{
+  margin-top: 50px!important;
+}

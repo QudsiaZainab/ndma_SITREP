@@ -1,0 +1,4 @@
+.writing-vertical {
+    writing-mode: vertical-rl; /* Vertical writing mode from right to left */
+    text-orientation: mixed; /* Allows vertical text to flow from bottom to top */
+  }
