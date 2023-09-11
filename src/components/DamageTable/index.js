@@ -110,63 +110,63 @@ function DamageTable() {
             <div style = {{overflowX: 'auto'}}>
                 <table style = {{fontSize: '0.55rem', borderCollapse: 'collapse', borderColor: '#cbd5e0', width: '100%', tableLayout: 'auto'}}>
                     <tr style = {{backgroundColor: '#F3F4F6'}}>
-                        <th style = {{textAlign: 'center'}}  >Province/Region</th>
-                        <th style = {{textAlign: 'center'}} >Districts</th>
-                        <th style = {{textAlign: 'center'}} colSpan="3">House Damage</th>
-                        <th style = {{textAlign: 'center'}} colSpan="3">Other Buildings Damage</th>
-                        <th style = {{textAlign: 'center'}} >Livestock</th>
+                        <th style = {{textAlign: 'center', paddingLeft: '2px', paddingRight: '2px'}}  >Province/Region</th>
+                        <th style = {{textAlign: 'center', paddingLeft: '2px', paddingRight: '2px'}} >Districts</th>
+                        <th style = {{textAlign: 'center', paddingLeft: '2px', paddingRight: '2px'}} colSpan="3">House Damage</th>
+                        <th style = {{textAlign: 'center', paddingLeft: '2px', paddingRight: '2px'}} colSpan="3">Other Buildings Damage</th>
+                        <th style = {{textAlign: 'center', paddingLeft: '2px', paddingRight: '2px'}} >Livestock</th>
                     </tr>
                     <tr style = {{backgroundColor: '#F3F4F6'}}>
                         <th></th>
                         <th></th>
-                        <th style = {{textAlign: 'center'}}>Partial</th>
-                        <th style = {{textAlign: 'center'}}>Full</th>
-                        <th style = {{textAlign: 'center', color: '#EF4444'}}>Total</th>
-                        <th style = {{textAlign: 'center'}}>Partial</th>
-                        <th style = {{textAlign: 'center'}}>Full</th>
-                        <th style = {{textAlign: 'center', color: '#EF4444', fontWeight: 'bold'}}>Total</th>
+                        <th style = {{textAlign: 'center', paddingLeft: '2px', paddingRight: '2px'}}>Partial</th>
+                        <th style = {{textAlign: 'center', paddingLeft: '2px', paddingRight: '2px'}}>Full</th>
+                        <th style = {{textAlign: 'center', color: '#EF4444', paddingLeft: '2px', paddingRight: '2px'}}>Total</th>
+                        <th style = {{textAlign: 'center', paddingLeft: '2px', paddingRight: '2px'}}>Partial</th>
+                        <th style = {{textAlign: 'center', paddingLeft: '2px', paddingRight: '2px'}}>Full</th>
+                        <th style = {{textAlign: 'center', color: '#EF4444', fontWeight: 'bold', paddingLeft: '2px', paddingRight: '2px'}}>Total</th>
                         <th></th>
                     </tr>
                     <tbody id="damagetablbdy">
                     {damageTableData.map((item, index) => (
                             <tr key={index}>
-                                <td style = {{textAlign: 'center'}}>{item.Province}</td>
-                                <td style = {{textAlign: 'center'}}>{item.District}</td>
-                                <td style = {{textAlign: 'center'}}>{item.Partial}</td>
-                                <td style = {{textAlign: 'center'}}>{item.Full}</td>
+                                <td style = {{textAlign: 'center', paddingLeft: '2px', paddingRight: '2px'}}>{item.Province}</td>
+                                <td style = {{textAlign: 'center', paddingLeft: '2px', paddingRight: '2px'}}>{item.District}</td>
+                                <td style = {{textAlign: 'center', paddingLeft: '2px', paddingRight: '2px'}}>{item.Partial}</td>
+                                <td style = {{textAlign: 'center', paddingLeft: '2px', paddingRight: '2px'}}>{item.Full}</td>
                                 <td style = {{textAlign: 'center', color: '#EF4444', fontWeight: 'bold'}}>{item.Total}</td>
-                                <td style = {{textAlign: 'center'}}>{item.P}</td>
-                                <td style = {{textAlign: 'center'}}>{item.F}</td>
-                                <td style = {{textAlign: 'center', color: '#EF4444', fontWeight: 'bold'}}>{item.T}</td>
-                                <td style = {{textAlign: 'center'}}>{item.Livestock}</td>
+                                <td style = {{textAlign: 'center', paddingLeft: '2px', paddingRight: '2px'}}>{item.P}</td>
+                                <td style = {{textAlign: 'center', paddingLeft: '2px', paddingRight: '2px'}}>{item.F}</td>
+                                <td style = {{textAlign: 'center', color: '#EF4444', fontWeight: 'bold', paddingLeft: '2px', paddingRight: '2px'}}>{item.T}</td>
+                                <td style = {{textAlign: 'center', paddingLeft: '2px', paddingRight: '2px'}}>{item.Livestock}</td>
                             </tr>
                         ))}
 
                     </tbody>
                     <tfoot style = {{backgroundColor: '#F3F4F6'}}>
                         <tr >
-                            <td colSpan="2" style = {{textAlign: 'center', fontWeight: 'bold', color: '#EF4444'}}>
+                            <td colSpan="2" style = {{textAlign: 'center', fontWeight: 'bold', color: '#EF4444', paddingLeft: '2px', paddingRight: '2px'}}>
                                 Total
                             </td>
-                            <td id="damagetd1"  style = {{textAlign: 'center', fontWeight: 'bold', color: '#EF4444'}}>
+                            <td id="damagetd1"  style = {{textAlign: 'center', fontWeight: 'bold', color: '#EF4444', paddingLeft: '2px', paddingRight: '2px'}}>
                                 {P}
                             </td>
-                            <td id="damagetd2"  style = {{textAlign: 'center', fontWeight: 'bold', color: '#EF4444'}}>
+                            <td id="damagetd2"  style = {{textAlign: 'center', fontWeight: 'bold', color: '#EF4444', paddingLeft: '2px', paddingRight: '2px'}}>
                                 {F}
                             </td>
-                            <td id="damagetd3"  style = {{textAlign: 'center', fontWeight: 'bold', color: '#EF4444'}}>
+                            <td id="damagetd3"  style = {{textAlign: 'center', fontWeight: 'bold', color: '#EF4444', paddingLeft: '2px', paddingRight: '2px'}}>
                                 {T}
                             </td>
-                            <td id="damagetd4"  style = {{textAlign: 'center', fontWeight: 'bold', color: '#EF4444'}}>
+                            <td id="damagetd4"  style = {{textAlign: 'center', fontWeight: 'bold', color: '#EF4444', paddingLeft: '2px', paddingRight: '2px'}}>
                                 {Partial}
                             </td>
-                            <td id="damagetd2"  style = {{textAlign: 'center', fontWeight: 'bold', color: '#EF4444'}}>
+                            <td id="damagetd2"  style = {{textAlign: 'center', fontWeight: 'bold', color: '#EF4444', paddingLeft: '2px', paddingRight: '2px'}}>
                                 {Full}
                             </td>
-                            <td id="damagetd3"  style = {{textAlign: 'center', fontWeight: 'bold', color: '#EF4444'}}>
+                            <td id="damagetd3"  style = {{textAlign: 'center', fontWeight: 'bold', color: '#EF4444', paddingLeft: '2px', paddingRight: '2px'}}>
                                 {Total}
                             </td>
-                            <td id="damagetd4"  style = {{textAlign: 'center', fontWeight: 'bold', color: '#EF4444'}}>
+                            <td id="damagetd4"  style = {{textAlign: 'center', fontWeight: 'bold', color: '#EF4444', paddingLeft: '2px', paddingRight: '2px'}}>
                                 {Livestock}
                             </td>
                         </tr>
