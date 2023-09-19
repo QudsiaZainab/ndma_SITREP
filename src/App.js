@@ -12,7 +12,7 @@ import FloodAlertInput from './components/FloodAlertInput';
 import FloodBaseFlowIndia from './components/FloodBaseFlowIndia';
 import ReservoirsLevel from './components/ReservoirsLevel';
 import { NGO_FORM } from './components/NGO_FORM';
-
+import { EarthquakeInputSeverity } from './components/EarthquakeInputSeverity';
 
 function App() {
     
@@ -41,6 +41,8 @@ function App() {
                     <Route path = '/floodbaseflowindia' element = {<FloodBaseFlowIndia/>}/>
                     {/* Dams and Reservoirs Levels (Today’s Level /Current Level & Storage) */}
                     <Route path = '/reservoirslevel' element = {<ReservoirsLevel/>}/>
+
+                    <Route path = '/earthquakeinputseverity' element = {<EarthquakeInputSeverity data = {Ucsbytehsil}/>}/>
                 </Routes>
         </BrowserRouter>
     )
