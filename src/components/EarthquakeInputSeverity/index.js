@@ -69,6 +69,7 @@ export const EarthquakeInputSeverity = ({ data }) => {
                         ))}
                     </select></div>
 
+                            <div>
                     <label className="">Select Input Severity of Earthquake:</label>
                         <select
                             className="border border-gray-400 block py-2 px-4 w-full rounded focus:outline-none focus:border-teal-500"
@@ -83,6 +84,7 @@ export const EarthquakeInputSeverity = ({ data }) => {
                                 </option>
                             ))}
                         </select>
+                            </div>
                 <div className="flex justify-center items-center">
                     <button type="submit" className="bg-gray-300 hover:bg-gray-400 font-bold py-2 px-4 rounded m-6" >Submit</button>
                 </div>
