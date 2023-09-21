@@ -85,7 +85,7 @@ export const EarthquakeInputSeverity = ({ data }) => {
                         </select></div>
                         <div >
                                 <label className="">Enter Earthquake Shake Intensity:</label>
-                                <input className="border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus:outline-none focus:border-teal-500" placeholder='Enter Earthquake Shake Intensity' type = "number" onChange={(e) => {setIntensity(e.target.value) }} required/>
+                                <input className="border border-gray-400 block py-2 mt-0 px-4 w-full ml-0 rounded focus:outline-none focus:border-teal-500" placeholder='Enter Earthquake Shake Intensity' type = "number" step = "any" onChange={(e) => {setIntensity(e.target.value) }} required/>
                             </div>
                 <div className="flex justify-center items-center">
                     <button type="submit" className="bg-gray-300 hover:bg-gray-400 font-bold py-2 px-4 rounded m-6" >Submit</button>
